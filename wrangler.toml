@@ -1,0 +1,30 @@
+name = "mailfree"
+# name = "mail-exhibit"
+main = "src/server.js"
+compatibility_date = "2024-01-01"
+
+# D1 数据库绑定
+[[d1_databases]]
+binding = "TEMP_MAIL_DB"
+database_name = "maill_free_db" #你的d1数据库名称
+database_id = "a30f4ece-7783-4869-a51c-7b5cb0448bdb" # 你的database_id
+
+# 登录会话过期时间（单位：天，默认7天）
+# 环境变量
+[vars]
+# FORWARD_RULES="[{"prefix":"vip","email":"a@example.com"},{"prefix":"*","email":"2141083706@qq.com"}]"
+
+# 静态资源目录（Workers + Assets）
+[assets]
+directory = "public"
+# 显式指定绑定名，确保在 Worker 中通过 env.ASSETS 可用
+binding = "ASSETS"
+
+# === 原 R2 已彻底替换为 KV（绑定名保持 MAIL_EML 不变）===
+[[kv_namespaces]]
+binding = "MAIL_EML"
+id = "ce2caf4918eb4327a543c34a7d3cfffe"   # ← 必须修改！见下面创建步骤
+
+# wrangler.toml (wrangler v3.88.0^) 日志服务（可选）
+# [observability.logs]
+# enabled = true
