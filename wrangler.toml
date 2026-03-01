@@ -23,7 +23,7 @@ binding = "ASSETS"
 # === 原 R2 已彻底替换为 KV（绑定名保持 MAIL_EML 不变）===
 [[kv_namespaces]]
 binding = "MAIL_EML"
-id = "ce2caf4918eb4327a543c34a7d3cfffe"   # ← 必须修改！见下面创建步骤
+id = "ce2caf4918eb4327a543c34a7d3cfffe"   # ← 必须修改！你的kv-id
 
 # wrangler.toml (wrangler v3.88.0^) 日志服务（可选）
 # [observability.logs]
